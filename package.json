@@ -1,0 +1,61 @@
+{
+  "name": "@4s1/conventional-commit-creator",
+  "version": "0.0.1",
+  "description": "Conventional Commit Creator",
+  "bugs": {
+    "url": "https://gitlab.com/4s1/conventional-commit-creator/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/4s1/conventional-commit-creator.git"
+  },
+  "license": "MIT",
+  "author": "Steffen <steffen@4s1.de>",
+  "type": "module",
+  "exports": "./dist/index.js",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "bin": {
+    "ccc": "./dist/index.js",
+    "conventional-commit-creator": "./dist/index.js"
+  },
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "build:dev": "pnpm run build -- --project tsconfig.dev.json",
+    "format": "prettier --write src/",
+    "preinstall": "npx only-allow pnpm",
+    "lbt": "npm run lint && npm run build && npm run test",
+    "lint": "echo no linting",
+    "lint:fix": "npm run lint -- --fix",
+    "prepare": "husky install",
+    "release": "git diff --exit-code --quiet && pnpm run lbt && standard-version",
+    "release:major": "pnpm run release -- --release-as major",
+    "release:minor": "pnpm run release -- --release-as minor",
+    "release:patch": "pnpm run release -- --release-as patch",
+    "start": "node dist/index.js",
+    "start:dev": "node --loader ts-node/esm src/index.ts",
+    "test": "echo no tests"
+  },
+  "prettier": "@4s1/eslint-config",
+  "dependencies": {
+    "prompts": "^2.4.2",
+    "zx": "^4.2.0"
+  },
+  "devDependencies": {
+    "@4s1/eslint-config": "3.2.2",
+    "@4s1/ts-config": "1.2.2",
+    "@types/node": "14.17.32",
+    "@types/prompts": "^2.4.0",
+    "eslint": "8.1.0",
+    "husky": "7.0.4",
+    "prettier": "2.4.1",
+    "standard-version": "9.3.2",
+    "typescript": "4.4.4"
+  },
+  "publishConfig": {
+    "@4s1:registry": "https://gitlab.com/api/v4/projects/30955728/packages/npm/"
+  }
+}
