@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://gitlab.com/4s1/conventional-commit-creator/compare/v0.2.0...v0.4.0) (2021-11-02)
+
+
+### Features
+
+* reformat type selection ([48c47f4](https://gitlab.com/4s1/conventional-commit-creator/commit/48c47f4526fc20e81382ab226736ce8b8c476bc2))
+* trim type, scope and body ([ea08f8d](https://gitlab.com/4s1/conventional-commit-creator/commit/ea08f8d5783b30ad6ca66f35ab452aff13f55120))
+
 ## [0.3.0](https://gitlab.com/4s1/conventional-commit-creator/compare/v0.2.0...v0.3.0) (2021-11-02)
 
 
