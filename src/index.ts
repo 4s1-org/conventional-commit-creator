@@ -97,7 +97,9 @@ async function main() {
     msg += ` (${refsText}#${res.issue})`
   }
 
+  console.info('committing ...')
   await $`git commit -m ${msg}`
+  console.info('done')
 }
 
 async function isGitSvn(): Promise<boolean> {
