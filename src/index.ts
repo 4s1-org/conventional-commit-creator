@@ -2,7 +2,7 @@
 
 // @ts-ignore
 import prompts, { PromptObject } from 'prompts'
-import { $ } from 'zx'
+import { $, nothrow, ProcessOutput } from 'zx'
 import * as fs from 'fs'
 
 $.verbose = false
@@ -60,7 +60,15 @@ const questions: PromptObject[] = [
   },
 ]
 
+let gitRootPath: ProcessOutput
+
 async function main() {
+  gitRootPath = await nothrow($`git rev-parse --show-toplevel`)
+  if (gitRootPath.exitCode !== 0) {
+    console.error('You are not in a Git directory')
+    process.exit(1)
+  }
+
   const staged = await $`git diff --cached`
   if (!staged.stdout) {
     console.error('Nothing to commit')
@@ -68,6 +76,11 @@ async function main() {
   }
 
   const res = await prompts(questions)
+  if (!res.type || !res.body) {
+    console.error('Aborted')
+    process.exit(1)
+  }
+
   let msg = `${res.type}`
   if (res.scope) {
     msg += `(${res.scope})`
@@ -86,8 +99,7 @@ async function main() {
 }
 
 async function isGitSvn(): Promise<boolean> {
-  const path = await $`git rev-parse --show-toplevel`
-  const fullPath = `${path.stdout.trim()}/.git/svn`
+  const fullPath = `${gitRootPath.stdout.trim()}/.git/svn`
   const res = fs.existsSync(fullPath)
   return res
 }
