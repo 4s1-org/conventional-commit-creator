@@ -18,7 +18,7 @@ const questions: PromptObject[] = [
       { title: 'fix - A bug Fix', value: 'fix' },
       { title: 'perf - A code change that improves performance', value: 'perf' },
       { title: 'docs - Documentation only changes', value: 'docs' },
-      { title: 'style - Code style change (semicolon, indentation...)', value: 'style' },
+      { title: 'style - Code style change (semicolon, indentation, ...)', value: 'style' },
       { title: 'refactor - Refactor code without changing public API', value: 'refactor' },
       { title: 'test - Add test to an existing feature', value: 'test' },
       { title: 'build - Changes that affect the build system', value: 'build' },
@@ -33,7 +33,7 @@ const questions: PromptObject[] = [
     message: 'scope?',
     validate: (value: string) => {
       if (value.length > 20) {
-        return `Your text is ${value.length - 20} char(s) too long`
+        return `Your text is ${value.length - 20} char(s) too long.`
       } else {
         return true
       }
@@ -45,12 +45,16 @@ const questions: PromptObject[] = [
     message: 'body?',
     validate: (value: string) => {
       if (value.length > 80) {
-        return `Your text is ${value.length - 80} char(s) too long`
+        return `Your text is ${value.length - 80} char(s) too long.`
       } else if (value.length < 3) {
-        return `Your text is ${3 - value.length} char(s) too short`
-      } else {
-        return true
+        return `Your text is ${3 - value.length} char(s) too short.`
       }
+
+      if (value[0] === value[0].toUpperCase()) {
+        return `First char must be in lower case.`
+      }
+
+      return true
     },
   },
   {
