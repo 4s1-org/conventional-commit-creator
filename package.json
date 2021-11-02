@@ -1,6 +1,6 @@
 {
   "name": "@4s1/conventional-commit-creator",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Conventional Commit Creator",
   "bugs": {
     "url": "https://gitlab.com/4s1/conventional-commit-creator/issues"
