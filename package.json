@@ -26,7 +26,6 @@
     "build": "rm -rf dist && tsc",
     "build:dev": "pnpm run build -- --project tsconfig.dev.json",
     "format": "prettier --write src/",
-    "preinstall": "npx only-allow pnpm",
     "lbt": "npm run lint && npm run build && npm run test",
     "lint": "echo no linting",
     "lint:fix": "npm run lint -- --fix",
