@@ -48,13 +48,11 @@ const questions: PromptObject[] = [
         return `Your text is ${value.length - 80} char(s) too long.`
       } else if (value.length < 3) {
         return `Your text is ${3 - value.length} char(s) too short.`
-      }
-
-      if (value[0] === value[0].toUpperCase()) {
+      } else if (value[0] === value[0].toUpperCase()) {
         return `First char must be in lower case.`
+      } else {
+        return true
       }
-
-      return true
     },
   },
   {
@@ -79,12 +77,12 @@ async function main() {
     process.exit(1)
   }
 
-  const res = await prompts(questions)
-  if (!res.type || !res.body) {
-    console.error('Aborted')
-    process.exit(1)
-  }
-
+  const res = await prompts(questions, {
+    onCancel: () => {
+      console.error('Aborted')
+      process.exit(1)
+    },
+  })
   let msg = `${res.type}`
   if (res.scope) {
     msg += `(${res.scope})`
