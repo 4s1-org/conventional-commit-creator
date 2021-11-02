@@ -83,11 +83,11 @@ async function main() {
       process.exit(1)
     },
   })
-  let msg = `${res.type}`
+  let msg = `${res.type.trim()}`
   if (res.scope) {
-    msg += `(${res.scope})`
+    msg += `(${res.scope.trim()})`
   }
-  msg += `: ${res.body}`
+  msg += `: ${res.body.trim()}`
   if (res.issue) {
     let refsText = ''
     const gitSvn = await isGitSvn()
