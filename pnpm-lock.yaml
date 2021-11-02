@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@4s1/eslint-config': 3.2.2
   '@4s1/ts-config': 1.2.2
-  '@types/node': 14.17.32
+  '@types/node': 16.11.6
   '@types/prompts': ^2.4.0
   eslint: 8.1.0
   husky: 7.0.4
@@ -20,7 +20,7 @@ dependencies:
 devDependencies:
   '@4s1/eslint-config': 3.2.2_4970c9ef821f42521db3d44d315eaeea
   '@4s1/ts-config': 1.2.2
-  '@types/node': 14.17.32
+  '@types/node': 16.11.6
   '@types/prompts': 2.4.0
   eslint: 8.1.0
   husky: 7.0.4
@@ -152,13 +152,8 @@ packages:
       form-data: 3.0.1
     dev: false
 
-  /@types/node/14.17.32:
-    resolution: {integrity: sha512-JcII3D5/OapPGx+eJ+Ik1SQGyt6WvuqdRfh9jUwL6/iHGjmyOriBDciBUu7lEIBTL2ijxwrR70WUnw5AEDmFvQ==}
-    dev: true
-
   /@types/node/16.11.6:
     resolution: {integrity: sha512-ua7PgUoeQFjmWPcoo9khiPum3Pd60k4/2ZGXt18sm2Slk0W0xZTqt5Y0Ny1NyBiN1EVQ/+FaF9NcY4Qe6rwk5w==}
-    dev: false
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
