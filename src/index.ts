@@ -2,10 +2,8 @@
 
 // @ts-ignore
 import prompts, { PromptObject } from 'prompts'
-import { $, nothrow, ProcessOutput } from 'zx'
 import * as fs from 'fs'
-
-$.verbose = false
+import { exec, ExecException } from 'child_process'
 
 const questions: PromptObject[] = [
   {
@@ -62,50 +60,93 @@ const questions: PromptObject[] = [
   },
 ]
 
-let gitRootPath: ProcessOutput
-
 async function main() {
-  gitRootPath = await nothrow($`git rev-parse --show-toplevel`)
-  if (gitRootPath.exitCode !== 0) {
-    console.error('You are not in a Git directory')
-    process.exit(1)
-  }
+  const gitRootPath = await getGitRootPath()
 
-  const staged = await $`git diff --cached`
-  if (!staged.stdout) {
+  if (!(await haveStagedChanges())) {
     console.error('Nothing to commit')
-    process.exit(1)
+    process.exit(0)
   }
 
-  const res = await prompts(questions, {
+  const data = await prompts(questions, {
     onCancel: () => {
       console.error('Aborted')
       process.exit(1)
     },
   })
-  let msg = `${res.type.trim()}`
-  if (res.scope) {
-    msg += `(${res.scope.trim()})`
-  }
-  msg += `: ${res.description.trim()}`
-  if (res.issue) {
-    let refsText = ''
-    const gitSvn = await isGitSvn()
-    if (gitSvn) {
-      refsText = 'refs '
-    }
-    msg += ` (${refsText}#${res.issue})`
-  }
 
-  console.info('committing ...')
-  await $`git commit -m ${msg}`
+  const isGitSvn = await checkIsGitSvn(gitRootPath)
+  const msg = createMsg(data, isGitSvn)
+  await commit(msg)
   console.info('done')
 }
 
-async function isGitSvn(): Promise<boolean> {
-  const fullPath = `${gitRootPath.stdout.trim()}/.git/svn`
+function createMsg(data: any, isGitSvn: boolean): string {
+  let msg = `${data.type.trim()}`
+
+  if (data.scope) {
+    msg += `(${data.scope.trim()})`
+  }
+
+  msg += `: ${data.description.trim()}`
+
+  if (data.issue) {
+    if (isGitSvn) {
+      msg += ` (refs #${data.issue})`
+    } else {
+      msg += ` (#${data.issue})`
+    }
+  }
+
+  return msg
+}
+
+async function commit(msg: string): Promise<void> {
+  console.info('committing ...')
+  try {
+    await execute(`git commit -m ${msg}`)
+  } catch (err) {
+    console.error(err)
+    process.exit(1)
+  }
+}
+
+async function haveStagedChanges(): Promise<boolean> {
+  try {
+    const staged = await execute('git diff --cached')
+    return staged !== ''
+  } catch (err) {
+    console.error(err)
+    process.exit(1)
+  }
+}
+
+async function getGitRootPath(): Promise<string> {
+  try {
+    const path = await execute('git rev-parse --show-toplevel')
+    return path.trim()
+  } catch (err) {
+    console.error(err)
+    process.exit(1)
+  }
+}
+
+async function checkIsGitSvn(gitRootPath: string): Promise<boolean> {
+  const fullPath = `${gitRootPath}/.git/svn`
   const res = fs.existsSync(fullPath)
   return res
+}
+
+async function execute(cmd: string): Promise<string> {
+  return new Promise((resolve, reject) => {
+    exec(cmd, (err: ExecException | null, stdout: string) => {
+      if (err) {
+        reject(err)
+        return
+      }
+      resolve(stdout)
+    })
+  })
 }
 
 main().catch(console.error)
