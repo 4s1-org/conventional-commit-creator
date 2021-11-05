@@ -28,8 +28,8 @@ const questions: PromptObject[] = [
     name: 'scope',
     message: 'scope?',
     validate: (value: string) => {
-      if (value.length > 20) {
-        return `Your text is ${value.length - 20} char(s) too long.`
+      if (value.length > 30) {
+        return `Your text is ${value.length - 30} char(s) too long.`
       } else {
         return true
       }
