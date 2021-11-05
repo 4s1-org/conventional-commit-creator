@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.1](https://gitlab.com/4s1/conventional-commit-creator/compare/v0.4.0...v0.4.1) (2021-11-05)
+
+
+### Bug Fixes
+
+* rename body to description ([f56f50d](https://gitlab.com/4s1/conventional-commit-creator/commit/f56f50d0cea7567d5e04f08520896b299c4f700a))
+
 ## [0.4.0](https://gitlab.com/4s1/conventional-commit-creator/compare/v0.2.0...v0.4.0) (2021-11-02)
 
 ### Features
