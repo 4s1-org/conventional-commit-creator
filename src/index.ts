@@ -41,8 +41,8 @@ const questions: PromptObject[] = [
   },
   {
     type: 'text',
-    name: 'body',
-    message: 'body?',
+    name: 'description',
+    message: 'description?',
     validate: (value: string) => {
       if (value.length > 80) {
         return `Your text is ${value.length - 80} char(s) too long.`
@@ -87,7 +87,7 @@ async function main() {
   if (res.scope) {
     msg += `(${res.scope.trim()})`
   }
-  msg += `: ${res.body.trim()}`
+  msg += `: ${res.description.trim()}`
   if (res.issue) {
     let refsText = ''
     const gitSvn = await isGitSvn()
