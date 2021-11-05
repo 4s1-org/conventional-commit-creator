@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://gitlab.com/4s1/conventional-commit-creator/compare/v0.4.1...v0.5.0) (2021-11-05)
+
+
+### Features
+
+* allow 30 chars for scope ([b680d47](https://gitlab.com/4s1/conventional-commit-creator/commit/b680d47a00b027d2b892392376b9beeb1952d083))
+* remove zx as dependencies and code cleanup ([76b52ac](https://gitlab.com/4s1/conventional-commit-creator/commit/76b52ac0328dc4fe5ea66240f639c5bd0636de9e))
+* reorder types ([ff83593](https://gitlab.com/4s1/conventional-commit-creator/commit/ff83593e98521f065291ccbd597290a20c2029e9))
+
 ## [0.4.1](https://gitlab.com/4s1/conventional-commit-creator/compare/v0.4.0...v0.4.1) (2021-11-05)
 
 
