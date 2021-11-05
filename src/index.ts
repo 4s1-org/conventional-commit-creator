@@ -102,7 +102,7 @@ function createMsg(data: any, isGitSvn: boolean): string {
 async function commit(msg: string): Promise<void> {
   console.info('committing ...')
   try {
-    await execute(`git commit -m ${msg}`)
+    await execute(`git commit -m "${msg}"`)
   } catch (err) {
     console.error(err)
     process.exit(1)
