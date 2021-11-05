@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-// @ts-ignore
 import prompts, { PromptObject } from 'prompts'
 import * as fs from 'fs'
 import { exec, ExecException } from 'child_process'
