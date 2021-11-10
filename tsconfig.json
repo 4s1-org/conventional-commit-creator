@@ -1,5 +1,5 @@
 {
-  "extends": "@4s1/ts-config/tsconfig-es2020.json",
+  "extends": "@4s1/ts-config/tsconfig-es2020-commonjs.json",
   "compilerOptions": {
     /* Basic Options */
     "outDir": "./dist",     /* Redirect output structure to the directory. */
