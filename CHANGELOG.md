@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.6.0](https://gitlab.com/4s1/conventional-commit-creator/compare/v0.5.1...v0.6.0) (2021-11-13)
+
+
+### Features
+
+* better description of types ([299226b](https://gitlab.com/4s1/conventional-commit-creator/commit/299226bbfbcf9272ffe25c0c0e7a7a7dfc518ae2))
+
 ## [0.5.1](https://gitlab.com/4s1/conventional-commit-creator/compare/v0.5.0...v0.5.1) (2021-11-05)
 
 
