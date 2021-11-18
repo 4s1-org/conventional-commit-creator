@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 import prompts, { PromptObject } from 'prompts'
-import * as fs from 'fs'
 import { exec, ExecException } from 'child_process'
 
 const questions: PromptObject[] = [
@@ -59,8 +58,6 @@ const questions: PromptObject[] = [
 ]
 
 async function main() {
-  const gitRootPath = await getGitRootPath()
-
   if (!(await haveStagedChanges())) {
     console.error('Nothing to commit')
     process.exit(0)
@@ -73,13 +70,12 @@ async function main() {
     },
   })
 
-  const isGitSvn = await checkIsGitSvn(gitRootPath)
-  const msg = createMsg(data, isGitSvn)
+  const msg = createMsg(data)
   await commit(msg)
   console.info('done')
 }
 
-function createMsg(data: any, isGitSvn: boolean): string {
+function createMsg(data: any): string {
   let msg = `${data.type.trim()}`
 
   if (data.scope) {
@@ -89,11 +85,7 @@ function createMsg(data: any, isGitSvn: boolean): string {
   msg += `: ${data.description.trim()}`
 
   if (data.issue) {
-    if (isGitSvn) {
-      msg += ` (refs #${data.issue})`
-    } else {
-      msg += ` (#${data.issue})`
-    }
+    msg += ` (#${data.issue})`
   }
 
   return msg
@@ -117,22 +109,6 @@ async function haveStagedChanges(): Promise<boolean> {
     console.error(err)
     process.exit(1)
   }
-}
-
-async function getGitRootPath(): Promise<string> {
-  try {
-    const path = await execute('git rev-parse --show-toplevel')
-    return path.trim()
-  } catch (err) {
-    console.error(err)
-    process.exit(1)
-  }
-}
-
-async function checkIsGitSvn(gitRootPath: string): Promise<boolean> {
-  const fullPath = `${gitRootPath}/.git/svn`
-  const res = fs.existsSync(fullPath)
-  return res
 }
 
 async function execute(cmd: string): Promise<string> {
