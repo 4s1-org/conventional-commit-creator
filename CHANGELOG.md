@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.8.0](https://gitlab.com/4s1/conventional-commit-creator/compare/v0.7.0...v0.8.0) (2021-11-18)
+
+
+### Features
+
+* add hack for redmine at work ([538273e](https://gitlab.com/4s1/conventional-commit-creator/commit/538273e997c074bb28c877571b68e82a9d3fff52))
+
 ## [0.7.0](https://gitlab.com/4s1/conventional-commit-creator/compare/v0.6.0...v0.7.0) (2021-11-18)
 
 
