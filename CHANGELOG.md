@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.7.0](https://gitlab.com/4s1/conventional-commit-creator/compare/v0.6.0...v0.7.0) (2021-11-18)
+
+
+### Features
+
+* remove brackets from issue ([cbaca2f](https://gitlab.com/4s1/conventional-commit-creator/commit/cbaca2f05ac80731ecf2b6a10c19ccf993df20c5))
+* **svn:** remove support for git svn ([e3a2dff](https://gitlab.com/4s1/conventional-commit-creator/commit/e3a2dff303a46e089363fcb46b10f8e045a5c72a))
+
 ## [0.6.0](https://gitlab.com/4s1/conventional-commit-creator/compare/v0.5.1...v0.6.0) (2021-11-13)
 
 
