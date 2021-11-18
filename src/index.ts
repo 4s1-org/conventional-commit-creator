@@ -85,7 +85,11 @@ function createMsg(data: any): string {
   msg += `: ${data.description.trim()}`
 
   if (data.issue) {
-    msg += ` (#${data.issue})`
+    if (!isBender()) {
+      msg += ` (#${data.issue})`
+    } else {
+      msg += ` [refs #${data.issue}]`
+    }
   }
 
   return msg
@@ -105,6 +109,16 @@ async function haveStagedChanges(): Promise<boolean> {
   try {
     const staged = await execute('git diff --cached')
     return staged !== ''
+  } catch (err) {
+    console.error(err)
+    process.exit(1)
+  }
+}
+
+async function isBender(): Promise<boolean> {
+  try {
+    const output = await execute('git remote -v')
+    return output.includes('intra.bender:')
   } catch (err) {
     console.error(err)
     process.exit(1)
