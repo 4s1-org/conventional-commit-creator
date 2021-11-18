@@ -85,7 +85,7 @@ function createMsg(data: any): string {
   msg += `: ${data.description.trim()}`
 
   if (data.issue) {
-    msg += ` (#${data.issue})`
+    msg += ` #${data.issue}`
   }
 
   return msg
