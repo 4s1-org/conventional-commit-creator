@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@4s1/eslint-config': 3.2.2
   '@4s1/ts-config': 1.3.1
-  '@types/node': 14.17.34
+  '@types/node': 14.18.0
   '@types/prompts': 2.4.0
   eslint: 8.3.0
   husky: 7.0.4
@@ -19,13 +19,13 @@ dependencies:
 devDependencies:
   '@4s1/eslint-config': 3.2.2_c5113bb79b5a08944a940bfe44ca30b5
   '@4s1/ts-config': 1.3.1
-  '@types/node': 14.17.34
+  '@types/node': 14.18.0
   '@types/prompts': 2.4.0
   eslint: 8.3.0
   husky: 7.0.4
   prettier: 2.5.0
   standard-version: 9.3.2
-  ts-node: 10.4.0_93e46f6a697db70638e1c817267526bc
+  ts-node: 10.4.0_5fa3e012ffda681857188eee90261f55
   typescript: 4.5.2
 
 packages:
@@ -170,8 +170,8 @@ packages:
     resolution: {integrity: sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==}
     dev: true
 
-  /@types/node/14.17.34:
-    resolution: {integrity: sha512-USUftMYpmuMzeWobskoPfzDi+vkpe0dvcOBRNOscFrGxVp4jomnRxWuVohgqBow2xyIPC0S3gjxV/5079jhmDg==}
+  /@types/node/14.18.0:
+    resolution: {integrity: sha512-0GeIl2kmVMXEnx8tg1SlG6Gg8vkqirrW752KqolYo1PHevhhZN3bhJ67qHj+bQaINhX0Ra3TlWwRvMCd9iEfNQ==}
     dev: true
 
   /@types/normalize-package-data/2.4.1:
@@ -2325,7 +2325,7 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /ts-node/10.4.0_93e46f6a697db70638e1c817267526bc:
+  /ts-node/10.4.0_5fa3e012ffda681857188eee90261f55:
     resolution: {integrity: sha512-g0FlPvvCXSIO1JDF6S232P5jPYqBkRL9qly81ZgAOSU7rwI0stphCgd2kLiCrU9DjQCrJMWEqcNSjQL02s6d8A==}
     hasBin: true
     peerDependencies:
@@ -2344,7 +2344,7 @@ packages:
       '@tsconfig/node12': 1.0.9
       '@tsconfig/node14': 1.0.1
       '@tsconfig/node16': 1.0.2
-      '@types/node': 14.17.34
+      '@types/node': 14.18.0
       acorn: 8.5.0
       acorn-walk: 8.2.0
       arg: 4.1.3
