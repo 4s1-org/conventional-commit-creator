@@ -3,7 +3,7 @@
 ## Install
 
 ```bash
-npm install -g --registry=https://gitlab.com/api/v4/packages/npm/ @4s1/conventional-commit-creator
+npm install -g @4s1/conventional-commit-creator
 ```
 
 ## Run
