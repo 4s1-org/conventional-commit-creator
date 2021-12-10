@@ -52,7 +52,7 @@
     "prettier": "2.5.1",
     "standard-version": "9.3.2",
     "ts-node": "10.4.0",
-    "typescript": "4.5.2"
+    "typescript": "4.5.3"
   },
   "publishConfig": {
     "@4s1:registry": "https://gitlab.com/api/v4/projects/30955728/packages/npm/"
