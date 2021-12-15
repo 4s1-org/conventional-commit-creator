@@ -15,8 +15,6 @@ sonarcloud-check:
     paths:
       - .sonar/cache
   script:
-    - curl --output tsconfig.root.json "https://gitlab.com/4s1/ts-config/-/raw/main/tsconfig-es2020-commonjs.json"
-    - sed -i "s|@4s1/ts-config/tsconfig-es2020-commonjs.json|./tsconfig.root.json|" tsconfig.json
     - sonar-scanner
   only:
     - merge_requests
@@ -29,9 +27,6 @@ validate-job:
     key: '$CI_COMMIT_REF_SLUG'
     paths:
       - .pnpm-store
-  before_script:
-    # Access to private packages
-    - echo "//gitlab.com/api/v4/packages/npm/:_authToken=${CI_JOB_TOKEN}" >> .npmrc
   script:
     - pnpm i
     - pnpm run lint
