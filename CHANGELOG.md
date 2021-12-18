@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.10.1](https://gitlab.com/4s1/conventional-commit-creator/compare/v0.10.0...v0.10.1) (2021-12-18)
+
+
+### Bug Fixes
+
+* add check if current dir is a git repository ([#4](https://gitlab.com/4s1/conventional-commit-creator/issues/4)) ([75d34be](https://gitlab.com/4s1/conventional-commit-creator/commit/75d34be610e1ef6500d970f8c32464da0bf2d6a3))
+* add missing await statement and rename function ([04892a0](https://gitlab.com/4s1/conventional-commit-creator/commit/04892a0e1a9566c0b53895036792001a8e42b00f))
+
 ## [0.10.0](https://gitlab.com/4s1/conventional-commit-creator/compare/v0.9.0...v0.10.0) (2021-12-15)
 
 ## [0.9.0](https://gitlab.com/4s1/conventional-commit-creator/compare/v0.8.0...v0.9.0) (2021-12-10)
