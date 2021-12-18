@@ -58,6 +58,11 @@ const questions: PromptObject[] = [
 ]
 
 async function main() {
+  if (!(await isCurrentDirUnderGitControl())) {
+    console.error('Current directory is not a git repository.')
+    process.exit(0)
+  }
+
   if (!(await haveStagedChanges())) {
     console.error('Nothing to commit')
     process.exit(0)
@@ -104,6 +109,15 @@ async function commit(msg: string): Promise<void> {
   } catch (err) {
     console.error(err)
     process.exit(1)
+  }
+}
+
+async function isCurrentDirUnderGitControl(): Promise<boolean> {
+  try {
+    const result = await execute('git rev-parse --is-inside-work-tree')
+    return result === 'true'
+  } catch (err) {
+    return false
   }
 }
 
