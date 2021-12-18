@@ -3,6 +3,13 @@
 import prompts, { PromptObject } from 'prompts'
 import { exec, ExecException } from 'child_process'
 
+type promptType = {
+  type: string
+  scope?: string
+  description: string
+  issue?: number
+}
+
 const questions: PromptObject[] = [
   {
     type: 'select',
@@ -68,19 +75,19 @@ async function main() {
     process.exit(0)
   }
 
-  const data = await prompts(questions, {
+  const data = (await prompts(questions, {
     onCancel: () => {
       console.error('Aborted')
       process.exit(1)
     },
-  })
+  })) as promptType
 
   const msg = await createMsg(data)
   await commit(msg)
   console.info('done')
 }
 
-async function createMsg(data: any): Promise<string> {
+async function createMsg(data: promptType): Promise<string> {
   let msg = `${data.type.trim()}`
 
   if (data.scope) {
@@ -91,8 +98,7 @@ async function createMsg(data: any): Promise<string> {
 
   if (data.issue) {
     // Hack to support Redmine ticket linking at work.
-    const isAtWork = await isWork()
-    if (!isAtWork) {
+    if (!(await isWork())) {
       msg += ` (#${data.issue})`
     } else {
       msg += ` [refs #${data.issue}]`
