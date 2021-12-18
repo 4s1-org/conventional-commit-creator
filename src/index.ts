@@ -70,12 +70,12 @@ async function main() {
     },
   })
 
-  const msg = createMsg(data)
+  const msg = await createMsg(data)
   await commit(msg)
   console.info('done')
 }
 
-function createMsg(data: any): string {
+async function createMsg(data: any): Promise<string> {
   let msg = `${data.type.trim()}`
 
   if (data.scope) {
@@ -85,7 +85,9 @@ function createMsg(data: any): string {
   msg += `: ${data.description.trim()}`
 
   if (data.issue) {
-    if (!isBender()) {
+    // Hack to support Redmine ticket linking at work.
+    const isAtWork = await isWork()
+    if (!isAtWork) {
       msg += ` (#${data.issue})`
     } else {
       msg += ` [refs #${data.issue}]`
@@ -115,7 +117,7 @@ async function haveStagedChanges(): Promise<boolean> {
   }
 }
 
-async function isBender(): Promise<boolean> {
+async function isWork(): Promise<boolean> {
   try {
     const output = await execute('git remote -v')
     return output.includes('intra.bender:')
