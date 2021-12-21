@@ -1,6 +1,6 @@
 {
   "name": "@4s1/conventional-commit-creator",
-  "version": "0.10.1",
+  "version": "0.10.2",
   "description": "Conventional Commit Creator",
   "keywords": [
     "conventional commit",
