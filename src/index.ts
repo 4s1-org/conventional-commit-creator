@@ -121,7 +121,7 @@ async function commit(msg: string): Promise<void> {
 async function isCurrentDirUnderGitControl(): Promise<boolean> {
   try {
     const result = await execute('git rev-parse --is-inside-work-tree')
-    return result === 'true'
+    return result.trim() === 'true'
   } catch (err) {
     return false
   }
