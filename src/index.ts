@@ -1,7 +1,5 @@
-#!/usr/bin/env node
-
 import prompts, { PromptObject } from 'prompts'
-import { exec, ExecException } from 'child_process'
+import { Git } from './git'
 
 type promptType = {
   type: string
@@ -65,12 +63,14 @@ const questions: PromptObject[] = [
 ]
 
 async function main() {
-  if (!(await isCurrentDirUnderGitControl())) {
+  const git = new Git()
+
+  if (!(await git.isCurrentDirUnderGitControl())) {
     console.error('Current directory is not a git repository.')
     process.exit(0)
   }
 
-  if (!(await haveStagedChanges())) {
+  if (!(await git.haveStagedChanges())) {
     console.error('Nothing to commit')
     process.exit(0)
   }
@@ -82,12 +82,13 @@ async function main() {
     },
   })) as promptType
 
-  const msg = await createMsg(data)
-  await commit(msg)
+  const isAtWork = await git.isAtWork()
+  const msg = await createMsg(data, isAtWork)
+  await git.commit(msg)
   console.info('done')
 }
 
-async function createMsg(data: promptType): Promise<string> {
+async function createMsg(data: promptType, isWork: boolean): Promise<string> {
   let msg = `${data.type.trim()}`
 
   if (data.scope) {
@@ -98,7 +99,7 @@ async function createMsg(data: promptType): Promise<string> {
 
   if (data.issue) {
     // Hack to support Redmine ticket linking at work.
-    if (!(await isWork())) {
+    if (!isWork) {
       msg += ` (#${data.issue})`
     } else {
       msg += ` [refs #${data.issue}]`
@@ -106,57 +107,6 @@ async function createMsg(data: promptType): Promise<string> {
   }
 
   return msg
-}
-
-async function commit(msg: string): Promise<void> {
-  console.info('committing ...')
-  try {
-    await execute(`git commit -m "${msg}"`)
-  } catch (err) {
-    console.error(err)
-    process.exit(1)
-  }
-}
-
-async function isCurrentDirUnderGitControl(): Promise<boolean> {
-  try {
-    const result = await execute('git rev-parse --is-inside-work-tree')
-    return result.trim() === 'true'
-  } catch (err) {
-    return false
-  }
-}
-
-async function haveStagedChanges(): Promise<boolean> {
-  try {
-    const staged = await execute('git diff --cached')
-    return staged !== ''
-  } catch (err) {
-    console.error(err)
-    process.exit(1)
-  }
-}
-
-async function isWork(): Promise<boolean> {
-  try {
-    const output = await execute('git remote -v')
-    return output.includes('intra.bender:')
-  } catch (err) {
-    console.error(err)
-    process.exit(1)
-  }
-}
-
-async function execute(cmd: string): Promise<string> {
-  return new Promise((resolve, reject) => {
-    exec(cmd, (err: ExecException | null, stdout: string) => {
-      if (err) {
-        reject(err)
-        return
-      }
-      resolve(stdout)
-    })
-  })
 }
 
 main().catch(console.error)
