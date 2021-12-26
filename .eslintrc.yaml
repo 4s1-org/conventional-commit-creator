@@ -1,0 +1,3 @@
+root: true
+extends:
+  - '@4s1/eslint-config/.eslintrc.yaml'

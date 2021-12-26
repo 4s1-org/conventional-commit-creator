@@ -31,7 +31,7 @@ const questions: PromptObject[] = [
     type: 'text',
     name: 'scope',
     message: 'scope?',
-    validate: (value: string) => {
+    validate: (value: string): string | boolean => {
       if (value.length > 30) {
         return `Your text is ${value.length - 30} char(s) too long.`
       } else {
@@ -43,7 +43,7 @@ const questions: PromptObject[] = [
     type: 'text',
     name: 'description',
     message: 'description?',
-    validate: (value: string) => {
+    validate: (value: string): string | boolean => {
       if (value.length > 80) {
         return `Your text is ${value.length - 80} char(s) too long.`
       } else if (value.length < 3) {
@@ -62,7 +62,7 @@ const questions: PromptObject[] = [
   },
 ]
 
-async function main() {
+async function main(): Promise<void> {
   const git = new Git()
 
   if (!(await git.isCurrentDirUnderGitControl())) {
