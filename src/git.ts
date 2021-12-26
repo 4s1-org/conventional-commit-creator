@@ -13,7 +13,7 @@ export class Git {
 
   public async haveStagedChanges(): Promise<boolean> {
     try {
-      const staged = await this.execute('git diff --cached')
+      const staged = await this.execute('git diff --cached | head -5')
       return staged !== ''
     } catch (err) {
       console.error(err)
