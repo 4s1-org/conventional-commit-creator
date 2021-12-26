@@ -32,7 +32,6 @@
     "format": "prettier --write src/",
     "lbt": "npm run lint && npm run build && npm run test",
     "lint": "eslint --ext .ts src/",
-    "lint:fix": "npm run lint -- --fix",
     "prepare": "husky install",
     "release": "git diff --exit-code --quiet && pnpm run lbt && standard-version",
     "release:major": "pnpm run release -- --release-as major",
