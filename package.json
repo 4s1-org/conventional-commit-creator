@@ -24,7 +24,7 @@
     "conventional-commit-creator": "./dist/index.js"
   },
   "files": [
-    "dist/index.js"
+    "dist/"
   ],
   "scripts": {
     "build": "rm -rf dist && tsc",
