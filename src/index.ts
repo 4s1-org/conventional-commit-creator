@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import prompts, { PromptObject } from 'prompts'
 import { Git } from './git'
 
