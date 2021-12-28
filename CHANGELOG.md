@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.11.3](https://gitlab.com/4s1/conventional-commit-creator/compare/v0.11.2...v0.11.3) (2021-12-28)
+
+
+### Bug Fixes
+
+* add whole dist folder ([3d1cd01](https://gitlab.com/4s1/conventional-commit-creator/commit/3d1cd01ab20554064de6a2ad3035a96e4f4db9b3))
+
 ## [0.11.2](https://gitlab.com/4s1/conventional-commit-creator/compare/v0.11.1...v0.11.2) (2021-12-28)
 
 
