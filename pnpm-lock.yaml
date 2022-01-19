@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@4s1/eslint-config': 3.6.0
   '@4s1/ts-config': 1.4.0
-  '@commitlint/cli': 16.0.2
+  '@commitlint/cli': 16.0.3
   '@commitlint/config-conventional': 16.0.0
   '@types/jest': 27.4.0
   '@types/node': 14.18.8
@@ -24,7 +24,7 @@ dependencies:
 devDependencies:
   '@4s1/eslint-config': 3.6.0_71d4d09aa055ef35a74fe0c042562c65
   '@4s1/ts-config': 1.4.0
-  '@commitlint/cli': 16.0.2_@types+node@14.18.8
+  '@commitlint/cli': 16.0.3_@types+node@14.18.8
   '@commitlint/config-conventional': 16.0.0
   '@types/jest': 27.4.0
   '@types/node': 14.18.8
@@ -384,8 +384,8 @@ packages:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
-  /@commitlint/cli/16.0.2_@types+node@14.18.8:
-    resolution: {integrity: sha512-Jt7iaBjoLGC5Nq4dHPTvTYnqPGkElFPBtTXTvBpTgatZApczyjI2plE0oG4GYWPp1suHIS/VdVDOMpPZjGVusg==}
+  /@commitlint/cli/16.0.3_@types+node@14.18.8:
+    resolution: {integrity: sha512-SB1od4/1ek5SShNKjKgUdpqiVNulNVgCkjkV4Zz9zLKrxn3sPcgvXMQNh/wy0/T4WPUVgHrHGcxWYOYXxrGwpg==}
     engines: {node: '>=v12'}
     hasBin: true
     dependencies:
