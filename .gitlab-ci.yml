@@ -2,9 +2,9 @@ include:
   - project: 4s1/gitlab-ci-config
     file: 'all/.gitlab-ci.yml'
   - project: 4s1/gitlab-ci-config
-    file: 'validate/.gitlab-ci.yml'
+    file: 'validate-typescript/.gitlab-ci.yml'
   - project: 4s1/gitlab-ci-config
-    file: 'sonar/.gitlab-ci.yml'
+    file: 'sonar-typescript/.gitlab-ci.yml'
 
 stages:
   - validate
