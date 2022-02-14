@@ -1,11 +1,11 @@
 include:
   - project: 4s1/gitlab-ci-config
-    file: 'all/.gitlab-ci.yml'
+    file: 'all/prevent-detached-pipeline/.gitlab-ci.yml'
   - project: 4s1/gitlab-ci-config
-    file: 'validate-typescript/.gitlab-ci.yml'
+    file: 'typescript/validate/.gitlab-ci.yml'
   - project: 4s1/gitlab-ci-config
-    file: 'sonar-typescript/.gitlab-ci.yml'
+    file: 'typescript/sonarlint/.gitlab-ci.yml'
 
 stages:
   - validate
-  - sonar
+  - sonarlint
