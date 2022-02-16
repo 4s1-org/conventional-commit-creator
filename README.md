@@ -1,7 +1,8 @@
 [![Pipeline](https://gitlab.com/4s1/conventional-commit-creator/badges/main/pipeline.svg)](https://gitlab.com/4s1/conventional-commit-creator/pipelines)
 [![Coverage](https://gitlab.com/4s1/conventional-commit-creator/badges/main/coverage.svg)](https://gitlab.com/4s1/conventional-commit-creator/commits/main)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=conventional-commit-creator&metric=bugs)](https://sonarcloud.io/summary/overall?id=conventional-commit-creator)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=conventional-commit-creator&metric=code_smells)](https://sonarcloud.io/summary/overall?id=conventional-commit-creator)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=4s1_conventional-commit-creator&metric=bugs)](https://sonarcloud.io/project/issues?id=4s1_conventional-commit-creator&resolved=false&types=BUG)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=4s1_conventional-commit-creator&metric=vulnerabilities)](https://sonarcloud.io/project/issues?id=4s1_conventional-commit-creator&resolved=false&types=VULNERABILITY)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=4s1_conventional-commit-creator&metric=code_smells)](https://sonarcloud.io/project/issues?id=4s1_conventional-commit-creator&resolved=false&types=CODE_SMELL)
 
 # Conventional Commit Creator
 
