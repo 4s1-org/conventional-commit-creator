@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.12.0](https://gitlab.com/4s1/conventional-commit-creator/compare/v0.11.3...v0.12.0) (2022-03-11)
+
+
+### Features
+
+* first letter in description can be in upper case ([67964f3](https://gitlab.com/4s1/conventional-commit-creator/commit/67964f3afb131376ef26b11c634565de521cc7b3))
+
 ## [0.11.3](https://gitlab.com/4s1/conventional-commit-creator/compare/v0.11.2...v0.11.3) (2021-12-28)
 
 
