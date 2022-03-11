@@ -50,8 +50,6 @@ const questions: PromptObject[] = [
         return `Your text is ${value.length - 80} char(s) too long.`
       } else if (value.length < 3) {
         return `Your text is ${3 - value.length} char(s) too short.`
-      } else if (value[0] === value[0].toUpperCase()) {
-        return `First char must be in lower case.`
       } else {
         return true
       }
