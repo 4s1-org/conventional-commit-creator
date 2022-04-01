@@ -10,6 +10,7 @@ type promptType = {
   issue?: number
 }
 
+// https://kapeli.com/cheat_sheets/Conventional_Commits.docset/Contents/Resources/Documents/index
 const questions: PromptObject[] = [
   {
     type: 'select',
@@ -18,14 +19,14 @@ const questions: PromptObject[] = [
     choices: [
       { title: 'fix      - A bugfix', value: 'fix' },
       { title: 'feat     - A new feature', value: 'feat' },
-      { title: 'refactor - Refactor code without changing public API', value: 'refactor' },
-      { title: 'chore    - Update something without impacting the user', value: 'chore' },
+      { title: 'refactor - A code change that neither fixes a bug nor adds a feature', value: 'refactor' },
       { title: 'perf     - A code change that improves performance', value: 'perf' },
       { title: 'docs     - Documentation only changes', value: 'docs' },
       { title: 'style    - Code style (semicolon, indentation, white-space, formatting, ...)', value: 'style' },
       { title: 'test     - add/change/delete tests', value: 'test' },
+      { title: "chore    - Other changes that don't modify src or test files", value: 'chore' },
       { title: 'build    - build system (npm, git, VSCode, husky, tsconfig, ...)', value: 'build' },
-      { title: 'ci       - CI configuration (GitLab, RenovateBot, ...)', value: 'ci' },
+      { title: 'ci       - CI configuration (GitHub, GitLab, RenovateBot, ...)', value: 'ci' },
       { title: 'revert   - Reverts a previous commit', value: 'revert' },
     ],
   },
