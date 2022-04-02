@@ -1,0 +1,11 @@
+name: Validate
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate-typescript:
+    uses: 4s1-org/ci-cd-config/.github/workflows/validate-typescript.yml@main

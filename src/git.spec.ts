@@ -101,7 +101,7 @@ describe('Git', () => {
       // Arrange
       const handleSpy = jest.spyOn(Git.prototype as any, 'execute')
       handleSpy.mockImplementation(() => {
-        return new Promise((resolve) => resolve('origin	git@gitlab.com:some-project.git (fetch)'))
+        return new Promise((resolve) => resolve('origin	git@github.com:some-project.git (fetch)'))
       })
       const git = new Git()
       // Act

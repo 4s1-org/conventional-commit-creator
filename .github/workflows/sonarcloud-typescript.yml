@@ -1,0 +1,15 @@
+name: SonarCloud
+
+on:
+  push:
+    branches:
+      - main
+      - 'renovate/**'
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  sonarcloud-typescript:
+    uses: 4s1-org/ci-cd-config/.github/workflows/sonarcloud-typescript.yml@main
+    secrets:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
