@@ -9,7 +9,7 @@ specifiers:
   '@types/prompts': 2.4.0
   eslint: 8.12.0
   husky: 7.0.4
-  prettier: 2.6.1
+  prettier: 2.6.2
   prompts: ^2.4.2
   standard-version: 9.3.2
   ts-node: 10.7.0
@@ -19,7 +19,7 @@ dependencies:
   prompts: 2.4.2
 
 devDependencies:
-  '@4s1/eslint-config': 3.11.0_0f2b7f77b715d452bab9e7948faf053b
+  '@4s1/eslint-config': 3.11.0_1c11022da6bee94acd53a18a58163cda
   '@4s1/ts-config': 1.4.0
   '@commitlint/cli': 16.2.3
   '@commitlint/config-conventional': 16.2.1
@@ -27,14 +27,14 @@ devDependencies:
   '@types/prompts': 2.4.0
   eslint: 8.12.0
   husky: 7.0.4
-  prettier: 2.6.1
+  prettier: 2.6.2
   standard-version: 9.3.2
   ts-node: 10.7.0_b34c2d00f7bffffd3f771e5188a8c9e6
   typescript: 4.6.3
 
 packages:
 
-  /@4s1/eslint-config/3.11.0_0f2b7f77b715d452bab9e7948faf053b:
+  /@4s1/eslint-config/3.11.0_1c11022da6bee94acd53a18a58163cda:
     resolution: {integrity: sha512-yKvQbJDfh0SQcIl/4jsCVB/JrAkCjltL6NDRj6iGEa+mZBhY5Wfh/z3ajhW4r+T17nt1yjVCpm8nYxqJQaoUqQ==}
     peerDependencies:
       eslint: '>=7.32.0'
@@ -45,7 +45,7 @@ packages:
       eslint: 8.12.0
       eslint-config-prettier: 8.5.0_eslint@8.12.0
       eslint-plugin-import: 2.25.4_eslint@8.12.0
-      prettier: 2.6.1
+      prettier: 2.6.2
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -2200,8 +2200,8 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier/2.6.1:
-    resolution: {integrity: sha512-8UVbTBYGwN37Bs9LERmxCPjdvPxlEowx2urIL6urHzdb3SDq4B/Z6xLFCblrSnE4iKWcS6ziJ3aOYrc1kz/E2A==}
+  /prettier/2.6.2:
+    resolution: {integrity: sha512-PkUpF+qoXTqhOeWL9fu7As8LXsIUZ1WYaJiY/a7McAQzxjk82OF0tibkFXVCDImZtWxbvojFjerkiLb0/q8mew==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
