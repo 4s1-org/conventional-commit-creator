@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@4s1/eslint-config': 3.11.0
-  '@4s1/ts-config': 1.4.0
+  '@4s1/ts-config': 1.4.1
   '@commitlint/cli': 16.2.3
   '@commitlint/config-conventional': 16.2.1
   '@types/node': 14.18.12
@@ -20,7 +20,7 @@ dependencies:
 
 devDependencies:
   '@4s1/eslint-config': 3.11.0_1c11022da6bee94acd53a18a58163cda
-  '@4s1/ts-config': 1.4.0
+  '@4s1/ts-config': 1.4.1
   '@commitlint/cli': 16.2.3
   '@commitlint/config-conventional': 16.2.1
   '@types/node': 14.18.12
@@ -51,8 +51,8 @@ packages:
       - typescript
     dev: true
 
-  /@4s1/ts-config/1.4.0:
-    resolution: {integrity: sha512-prdCM8V0LZ9Rag9VYUs66W2V3w9uOkZCvJHRM8LN3dRcLPs2hxZWOObx7CM93p2M7LQe2mmdXx5W95RnQhom9g==}
+  /@4s1/ts-config/1.4.1:
+    resolution: {integrity: sha512-y9jFZG3ReUHi49dqkVZ0+vtqpaPhhFyNN2xJNMQE3xL61AzL/1paH96Rs2J5Y0N97M27HayodNfR/pXx+vmltg==}
     dev: true
 
   /@babel/code-frame/7.16.0:
