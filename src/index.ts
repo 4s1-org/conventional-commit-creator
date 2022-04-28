@@ -25,7 +25,7 @@ const questions: PromptObject[] = [
       { title: 'style    - Code style (semicolon, indentation, white-space, formatting, ...)', value: 'style' },
       { title: 'test     - add/change/delete tests', value: 'test' },
       { title: "chore    - Other changes that don't modify src or test files", value: 'chore' },
-      { title: 'build    - build system (npm, git, VSCode, husky, tsconfig, ...)', value: 'build' },
+      { title: 'build    - build system (npm, git, VSCode, tsconfig, ...)', value: 'build' },
       { title: 'ci       - CI configuration (GitHub, GitLab, RenovateBot, ...)', value: 'ci' },
       { title: 'revert   - Reverts a previous commit', value: 'revert' },
     ],
